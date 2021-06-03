@@ -1,0 +1,65 @@
+<%- include("_headercli") -%>
+<% for (const profile of data) { %>
+<div class="row">
+    <div class=" adm col-sm-9">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h2 class="panel-title text-center">Welcome : <%=profile.fname%> <%=profile.sname%></h2>
+        </div>
+        <div> </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class=" col-md-12"> 
+              <form action="/connect/profile" method="post">
+              <table class="table text-center table-user-information">
+                <tbody>
+                  <tr>
+                    <td>ID:</td>
+                    <td><%=profile.id%></td>
+                  </tr>
+                  <tr>
+                    <td>Firstname :</td>
+                    <td><input type="text" name="fname" value="<%=profile.fname%>"></td>
+                  </tr>
+                  <tr>
+                    <td>Name :</td>
+                    <td><input type="text" name="sname" value="<%=profile.sname%>"></td>
+                  </tr>
+                  <tr>
+                    <td>Email :</td>
+                    <td><input type="text" name="email" value="<%=profile.emailu%>"></td>
+                  </tr>
+                  <tr>
+                    <tr>
+                      <td>Phone :</td>
+                      <td><input type="text" name="phone" value="<%=profile.phone%>"></td>
+                    </tr>
+                    <tr>
+                    <td>Username :</td>
+                    <td><input readonly type="hidden" name="username" value="<%=profile.username%>"><%=profile.username%></td>
+                  </tr>
+                  <tr>
+                    <td>Password :</td>
+                    <td class="font-weight-bold"><input readonly type="hidden" name="password" value="<%=profile.password%>">**********</td>
+                    <input readonly type="hidden" name="role" value="<%=profile.role%>">
+                    
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <div class="row">
+              <div class="col-md-10"></div>
+            
+            <input type="submit" value="Save" class=" mr-4 btn btn-default btn-success" /><a class="btn btn-outline-dark cancel" href="/connect/dashboard">Cancel</a></div>
+            
+            </form>
+              <p class="text-center probl" style="opacity: 0.7;">In case of problem, please contact a technician. He will answer you as soon as possible.</p>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+<% } %>
+<%- include("_footercli") -%>

@@ -1,0 +1,79 @@
+<%- include("../admin/_headerad") -%>
+
+<!-- Entreprises -->
+<div class="border-top border-dark my-3"></div>
+<h2>List of Companies (<%= model.length %>)</h2>
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Address</th>
+        <th>ZIP Code</th>
+        <th>City</th>
+        <th>Company Name</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/companies/create">Ajouter</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const companies of model) { %>
+        <tr>
+          <td><%= companies.comp_id %></td>
+          <td><%= companies.comp_adresse %></td>
+          <td><%= companies.comp_ZIP %></td>
+          <td><%= companies.comp_city %></td>
+          <td><%= companies.comp_name %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/connectad/companies/edit/<%= companies.comp_id %>">Modifier</a>
+            <a class="btn btn-sm btn-danger" href="/companies/delete/<%= companies.comp_id %>">Effacer</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<!-- ANNONCES -->
+<div class="border-top border-dark my-3"></div>
+<h2>List of advertisements (<%= model.length %>)</h2>
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Date of Publication</th>
+        <th>Start date</th>
+        <th>Presentation</th>
+        <th>Categorie</th>
+        <th>Pay</th>
+        <th>Compagny</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/advertisements/ad_create">Ajouter</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const advertisements of model) { %>
+        <tr>
+          <td><%= advertisements.advert_id %></td>
+          <td><%= advertisements.advert_title %></td>
+          <td><%= advertisements.advert_pdate %></td>
+          <td><%= advertisements.advert_startdate %></td>
+          <td><%= advertisements.advert_presentation %></td>
+          <td><%= advertisements.advert_contractcat %></td>
+          <td><%= advertisements.advert_pay%></td>
+          <td><%= advertisements.comp_name%></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/advertisements/ad_edit/<%= advertisements.advert_id %>">Modifier</a>
+            <a class="btn btn-sm btn-danger" href="/advertisements/ad_delete/<%= advertisements.advert_id %>">Effacer</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<div class="border-top border-dark my-3"></div>
+<%- include("../admin/_footerad") -%>

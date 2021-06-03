@@ -1,0 +1,108 @@
+<%- include("../partials/_header") -%>
+
+<div id="sgnin"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 mx-auto">
+      <div class="log">
+      <div id="first">
+        <div class="myform form ">
+          <div class="logo mb-3">
+            <div class="col-md-12 text-center">
+              <h3>Login</h3>
+            </div>
+          </div>
+          <form action="/connect/signin" method="post" name="login">
+            <!-- A remplir -->
+            <div class="form-group">
+              <i class="fa fa-user" aria-hidden="true"></i> <label for="exampleInputEmail1">Email / Username</label>
+              <input type="text" name="user"  class="form-control" id="emailu" aria-describedby="emailHelp" placeholder="Enter Your Email">
+            </div>
+            <div class="form-group">
+              <i class="fa fa-lock" aria-hidden="true"></i> <label for="exampleInputEmail1">Password</label>
+              <input type="password" name="password" id="passwordu"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Your Password">
+            </div>
+            <div>
+              <% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+              <% } %>
+            </div>
+            <!-- Conditions -->
+            <div class="form-group">
+              <p class="text-center">By logging in, you accept our <a href="/termsofuse">Terms of Use</a></p>
+            </div>
+            <!-- Submit -->
+            <div class="col-md-12 text-center ">
+              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+            </div>
+            <div class="col-md-12  <text-center></text-center>">
+                <hr class="hr-or">
+            </div>
+          <div class="form-group">
+            <p class="text-center">Don't have an account ? <a href="#sgnup" id="signup">Create it here</a></p>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div id="second">
+      <div class="myform form ">
+        <div class="logo mb-3">
+          <div class="col-md-12 text-center">
+            <h3>Create your account</h3>
+          </div>
+        </div>
+        <form action="/connect/signup" method="post" name="register">
+          <!-- A remplir -->
+          <div class="form-group">
+            <i class="fa fa-user" aria-hidden="true"></i> <label for="exampleInputEmail1">Firstname</label>
+            <input type="text"  name="firstname" class="form-control" id="firstname" aria-describedby="fnameHelp" placeholder="Enter Your Firstname">
+          </div>
+          <div class="form-group">
+            <i class="fa fa-user" aria-hidden="true"></i> <label for="exampleInputEmail1">Name</label>
+            <input type="text"  name="lastname" class="form-control" id="lastname" aria-describedby="lnameHelp" placeholder="Enter Your Lastname">
+          </div>
+          <div class="form-group">
+            <i class="fa fa-lock" aria-hidden="true"></i> <label for="exampleInputEmail1">Phone</label>
+            <input type="phone" name="phone" id="phone"  class="form-control" aria-describedby="passHelp" placeholder="Enter Your Phone Number">
+          </div>
+          <div class="form-group">
+            <i class="fa fa-user" aria-hidden="true"></i> <label for="exampleInputEmail1">Email Address</label>
+            <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Your Email">
+          </div>
+          <div class="form-group">
+            <i class="fa fa-user" aria-hidden="true"></i> <label for="exampleInputEmail1">Username</label>
+            <input type="text" name="username"  class="form-control" aria-describedby="usernameHelp" placeholder="Enter Your Userame" required>
+          </div>
+          <div class="form-group">
+            <i class="fa fa-lock" aria-hidden="true"></i> <label for="exampleInputEmail1">Password</label>
+            <input type="password" name="password" id="password"  class="form-control" aria-describedby="passHelp" placeholder="Enter Your Password">
+          </div>
+          
+          <!-- Submit -->
+          <div class="col-md-12 text-center mb-3">
+            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Sign Up</button>
+          </div>
+          <div>
+            <% if (messagea.length > 0) { %>
+              <div class="alert alert-success"><%= messagea %></div>
+            <% } %>
+            <% if (messager.length > 0) { %>
+              <div class="alert alert-danger"><%= messager %></div>
+            <% } %>
+          </div>
+          <div class="col-md-12 ">
+            <div class="form-group">
+              <p class="text-center"><a href="#sgnin" id="signin">Already an account ?</a></p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div id="sgnup"></div>
+
+<%- include("../partials/_footer") -%>

@@ -1,0 +1,36 @@
+<%- include("../admin/_headerad") -%>
+
+<h2>List of Companies (<%= model.length %>)</h2>
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Address</th>
+        <th>ZIP Code</th>
+        <th>City</th>
+        <th>Name of Company</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/connectad/companies/create">Add</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const companies of model) { %>
+        <tr>
+          <td><%= companies.comp_id %></td>
+          <td><%= companies.comp_adresse %></td>
+          <td><%= companies.comp_ZIP %></td>
+          <td><%= companies.comp_city %></td>
+          <td><%= companies.comp_name %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/connectad/companies/edit/<%= companies.comp_id %>">Modify</a>
+            <a class="btn btn-sm btn-danger" href="/connectad/companies/delete/<%= companies.comp_id %>">Delete</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("../admin/_footerad") -%>

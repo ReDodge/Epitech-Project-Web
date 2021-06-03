@@ -1,0 +1,49 @@
+<%- include("../admin/_headerad") -%>
+
+<h2>Add a company</h2>
+
+<form action="/connectad/companies/create" method="post">
+  <div class="form-horizontal">
+
+    
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Adresse">Address</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="Adresse" value="<%= model.comp_adresse %>" required/>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="ZIPcode">ZIP Code</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="ZIPcode" value="<%= model.comp_ZIP %>" required/>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="Ville">City</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="Ville" value="<%= model.comp_city %>" required/>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-form-label col-sm-2" for="CompaniesName">Company Name</label>
+  <div class="col-sm-7">
+    <input class="form-control" name="CompaniesName" value="<%= model.comp_name %>" required/>
+  </div>
+</div>
+</div>
+
+    
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"></label>
+      <div class="col-sm-10">
+        <input type="submit" value="Ajouter" class="btn btn-default btn-success" />
+        <a class="btn btn-outline-dark cancel" href="/connectad/companies">Cancel</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+<%- include("../admin/_footerad") -%>

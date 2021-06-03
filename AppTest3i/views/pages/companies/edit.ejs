@@ -1,0 +1,50 @@
+<%- include("../admin/_headerad") -%>
+
+<h2>Modify a company</h2>
+<% for (const companies of model) { %>
+<form action="/connectad/companies/edit/<%= companies.comp_id %>" method="post">
+  <div class="form-horizontal">
+
+
+    <div class="form-group row">
+      <% for (const companies of model) { %>
+        <label class="col-form-label col-sm-2" for="Adresse">Address</label>
+        <div class="col-sm-7">
+          <input class="form-control" name="Adresse" value="<%= companies.comp_adresse %>" required/>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2" for="ZIPcode">ZIP Code</label>
+        <div class="col-sm-7">
+          <input class="form-control" name="ZIPcode" value="<%= companies.comp_ZIP %>" required/>
+        </div>
+      </div>
+    
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2" for="Ville">City</label>
+        <div class="col-sm-7">
+          <input class="form-control" name="Ville" value="<%= companies.comp_city %>" required/>
+        </div>
+      </div>
+    
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2" for="CompaniesName">Company Name</label>
+        <div class="col-sm-7">
+          <input class="form-control" name="CompaniesName" value="<%= companies.comp_name %>" required/>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"></label>
+      <div class="col-sm-10">
+        <input type="submit" value="Modifier" class="btn btn-default btn-warning" />
+        <a class="btn btn-outline-dark cancel" href="/connectad/companies">Cancel</a>
+      </div>
+    </div>
+  </div>
+</form>
+<% } %>
+<%- include("../admin/_footerad") -%>

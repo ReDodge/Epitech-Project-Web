@@ -1,0 +1,42 @@
+<%- include("../admin/_headerad") -%>
+
+<h2>List of advertisements (<%= model.length %>)</h2>
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Date of Publication</th>
+        <th>Start Date</th>
+        <th>Presentation</th>
+        <th>Categorie</th>
+        <th>Pay</th>
+        <th>Company</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/connectad/advertisements/ad_create">Add</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const advertisements of model) { %>
+        <tr>
+          <td><%= advertisements.advert_id %></td>
+          <td><%= advertisements.advert_title %></td>
+          <td><%= advertisements.advert_pdate %></td>
+          <td><%= advertisements.advert_startdate %></td>
+          <td><%= advertisements.advert_presentation %></td>
+          <td><%= advertisements.advert_contractcat %></td>
+          <td><%= advertisements.advert_pay%></td>
+          <td><%= advertisements.comp_name%></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/connectad/advertisements/ad_edit/<%= advertisements.advert_id %>">Modify</a>
+            <a class="btn btn-sm btn-danger" href="/connectad/advertisements/ad_delete/<%= advertisements.advert_id %>">Delete</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("../admin/_footerad") -%>

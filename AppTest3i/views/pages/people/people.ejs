@@ -1,0 +1,42 @@
+<%- include("../admin/_headerad") -%>
+
+<h2>Liste of Users (<%= model.length %>)</h2>
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/connectad/people/people_create">Add</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const people of model) { %>
+        <tr>
+          <td><%= people.id %></td>
+          <td><%= people.fname %></td>
+          <td><%= people.sname %></td>
+          <td><%= people.emailu %></td>
+          <td><%= people.phone %></td>
+          <td><%= people.username %></td>
+          <td><%= people.password %></td>
+          <td><%= people.role %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/connectad/people/people_edit/<%= people.id %>">Modify</a>
+            <a class="btn btn-sm btn-danger" href="/connectad/people/people_delete/<%= people.id %>">Delete</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("../admin/_footerad") -%>

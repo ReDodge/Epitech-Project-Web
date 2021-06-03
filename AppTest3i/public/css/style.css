@@ -1,0 +1,120 @@
+/* ===================BIGPART============== */
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    
+}
+
+
+header{
+    flex: 15%;
+    opacity: 85%;
+    z-index: +4;
+}
+
+footer{
+    opacity: 85%;
+    z-index: +4;
+}
+
+
+#ok{
+    margin-top: 10px;
+}
+
+/* ===================MAIN============== */
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 70%;
+    font-family: 'Inconsolata', monospace;
+}
+h3{
+    font-weight: bold;
+    text-decoration: underline;
+}
+h3{
+   margin-top: auto;
+   font-weight: bold;
+   flex:1;
+}
+.offer{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px auto 20px auto;
+    border-radius: 20px;
+    opacity: 90%;
+    transition: transform .2s
+}
+
+.adm{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px auto 20px auto;
+    border-radius: 20px;
+    opacity: 90%;
+}
+
+.offer:hover {
+  transform: scale(1.05);
+}
+
+.probl{
+    padding-bottom: 5px;
+    padding-top: 15px;
+}
+
+.admli { 
+    margin:auto auto auto auto; 
+}
+
+button{
+    margin:auto auto 15px auto;
+}
+
+.learnmore, .learnmore:link, .learnmore:hover, .learnmore:active, .learnmore:visited{
+  color: white;
+  text-decoration: none;
+}
+
+.submit{
+    margin-top: 10px;
+}
+
+.form{
+    margin-top: 10px;
+}
+.hide{
+    display: none;
+}
+
+/* ===================LOGIN============== */
+
+.log{
+    background-color: white;
+    opacity: 90%;
+    padding: 15px;
+    margin: 30px;
+}
+
+
+/* ===================FOOTER============== */
+
+footer{
+    opacity: 85%;
+}
+
+.reseau{
+  color: white;
+}
