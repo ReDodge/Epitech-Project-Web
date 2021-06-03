@@ -47,5 +47,4 @@ If you want to use the same database, please don't forget to adapt the credentia
 
 ## Thanks To
 
-Thanks to Hugo Manginot (hugo.manginot@epitech.eu) for participating in the creation of the project, we formed a good team.
-You can also contact me, in case of problems : gabin.neron@epitech.eu
+Thanks to Gabin Neron (gabin.neron@epitech.eu) for participating in the creation of the project, we formed a good team.
